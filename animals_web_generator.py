@@ -17,51 +17,59 @@ def serialize_animal(animal_obj):
     if "name" in animal_obj:
         output += f'  <div class="card__title">{animal_obj["name"]}</div>\n'
 
-    output += '  <p class="card__text">\n'
+    output += '  <div class="card__text">\n'
+    output += '    <ul class="card__list">\n'
 
     if "characteristics" in animal_obj:
         if "diet" in animal_obj["characteristics"]:
             output += (
-                f'    <strong>Diet:</strong> '
-                f'{animal_obj["characteristics"]["diet"]}<br/>\n'
+                f'      <li class="card__list-item">'
+                f'<strong>Diet:</strong> '
+                f'{animal_obj["characteristics"]["diet"]}</li>\n'
             )
 
     if "locations" in animal_obj:
         if len(animal_obj["locations"]) > 0:
             output += (
-                f'    <strong>Location:</strong> '
-                f'{animal_obj["locations"][0]}<br/>\n'
+                f'      <li class="card__list-item">'
+                f'<strong>Location:</strong> '
+                f'{animal_obj["locations"][0]}</li>\n'
             )
 
     if "characteristics" in animal_obj:
         if "type" in animal_obj["characteristics"]:
             output += (
-                f'    <strong>Type:</strong> '
-                f'{animal_obj["characteristics"]["type"]}<br/>\n'
+                f'      <li class="card__list-item">'
+                f'<strong>Type:</strong> '
+                f'{animal_obj["characteristics"]["type"]}</li>\n'
             )
 
     if "characteristics" in animal_obj:
         if "lifespan" in animal_obj["characteristics"]:
             output += (
-                f'    <strong>Lifespan:</strong> '
-                f'{animal_obj["characteristics"]["lifespan"]}<br/>\n'
+                f'      <li class="card__list-item">'
+                f'<strong>Lifespan:</strong> '
+                f'{animal_obj["characteristics"]["lifespan"]}</li>\n'
             )
 
     if "characteristics" in animal_obj:
         if "weight" in animal_obj["characteristics"]:
             output += (
-                f'    <strong>Weight:</strong> '
-                f'{animal_obj["characteristics"]["weight"]}<br/>\n'
+                f'      <li class="card__list-item">'
+                f'<strong>Weight:</strong> '
+                f'{animal_obj["characteristics"]["weight"]}</li>\n'
             )
 
     if "characteristics" in animal_obj:
         if "top_speed" in animal_obj["characteristics"]:
             output += (
-                f'    <strong>Top Speed:</strong> '
-                f'{animal_obj["characteristics"]["top_speed"]}<br/>\n'
+                f'      <li class="card__list-item">'
+                f'<strong>Top Speed:</strong> '
+                f'{animal_obj["characteristics"]["top_speed"]}</li>\n'
             )
 
-    output += "  </p>\n"
+    output += "    </ul>\n"
+    output += "  </div>\n"
     output += "</li>\n"
 
     return output
